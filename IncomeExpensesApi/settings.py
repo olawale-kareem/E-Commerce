@@ -40,8 +40,8 @@ INSTALLED_APPS = [
 ]
 
 SWAGGER_SETTINGS = {
-    'SECURITY_DEFINITIONS':{
-        'Bearer':{
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
             'type': 'apiKey',
             'name': 'Authorization',
             'in': 'header'
@@ -51,9 +51,9 @@ SWAGGER_SETTINGS = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     # cors
     "corsheaders.middleware.CorsMiddleware",
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -102,7 +102,7 @@ REST_FRAMEWORK = {
     ),
 
     'DEFAULT_PERMISSION_CLASSES': [
-            'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.AllowAny',
     ],
 
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -110,13 +110,10 @@ REST_FRAMEWORK = {
 }
 
 
-
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=10),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
-
-
 
 
 # Password validation

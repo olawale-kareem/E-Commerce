@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'drf_yasg',
     'expenses',
-    'income'
+    'income',
+    'Charts'
 ]
 
 SWAGGER_SETTINGS = {

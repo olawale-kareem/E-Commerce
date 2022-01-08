@@ -22,18 +22,17 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
 
-
 schema_view = get_schema_view(
-   openapi.Info(
-      title="Income Expense API",
-      default_version='v1',
-      description="Test description",
-      terms_of_service="https://www.ourapp.com/policies/terms/",
-      contact=openapi.Contact(email="contact@snippets.local"),
-      license=openapi.License(name="test License"),
-   ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
+    openapi.Info(
+        title="Income Expense API",
+        default_version='v1',
+        description="Test description",
+        terms_of_service="https://www.ourapp.com/policies/terms/",
+        contact=openapi.Contact(email="contact@snippets.local"),
+        license=openapi.License(name="test License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
 )
 
 urlpatterns = [
@@ -41,6 +40,9 @@ urlpatterns = [
     path('api/auth/v1/', include('authentication.urls')),
     path('api/expenses/v1/', include('expenses.urls')),
     path('api/income/v1/', include('income.urls')),
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path('api/userstats/v1/', include('Charts.urls')),
+    path('swagger/', schema_view.with_ui('swagger',
+         cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc',
+         cache_timeout=0), name='schema-redoc'),
 ]

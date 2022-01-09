@@ -25,7 +25,6 @@ class ExpensesSummaryStats(APIView):
         expenses = Expense.objects.filter(
             owner=request.user, date__gte=ayear_ago, date__lte=todays_date
         )
-
         final = {}
         categories = list(set(map(self.get_category, expenses)))
 

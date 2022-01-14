@@ -122,19 +122,3 @@ class LogoutSerializer(serializers.Serializer):
 
         except TokenError:
             self.fail('bad_token')
-
-
-###
-
-# class ResetPasswordEmailRequestSerializer(serializers.Serializer):
-#     email = serializers.EmailField(min_length = 2)
-#     class Meta:
-#         fields = ['email']
-
-# class SetNewPasswordSerializer(serializers.Serializer):
-#     new_password = serializers.CharField(min_length=6, max_length=68, write_only=True)
-#     confirm_password = serializers.CharField(min_length=6, max_length=68, write_only=True)
-#     uidb64 = serializers.CharField(min_length=1,  read_only=True)
-
-#     class Meta:
-#         fields = ['password', 'confirm_password', 'uidb64']
